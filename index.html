@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SulfSense — Team Portfolio & AI Exposure Monitoring Concept</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Light Theme Styles (Navy Blue & White) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ TOP LOGO BANNER (HEADER LOGOS) ============ -->
+  <div class="top-logo-banner">
+    <div class="wrap top-logo-container">
+      <div class="banner-title-group">
+        <span class="banner-badge">SMART INDIA HACKATHON 2026 · INDUSTRY & ACADEMIC COLLABORATION</span>
+        <!-- <span class="banner-title">SulfSense Innovation Project Partners</span> -->
+      </div>
+      <div class="logo-row">
+        <!-- Logo 1: ONGC / MRPL Logo -->
+        <div class="logo-card" title="ONGC / MRPL Logo">
+          <img src="images/logo1.png" alt="ONGC / MRPL Logo" class="logo-img"
+            onerror="this.onerror=null; this.src='images/logo_ongc_mrpl.png';">
+        </div>
+        <!-- Logo 2: Ministry of Education, AICTE, MoE's Innovation Cell, SIH 2026 Logo -->
+        <div class="logo-card" title="Ministry of Education, AICTE, MoE Innovation Cell, SIH 2026 Logo">
+          <img src="images/logo2.png" alt="Ministry of Education / AICTE / SIH 2026 Logo" class="logo-img"
+            onerror="this.onerror=null; this.src='images/logo_sih_moe.png';">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN NAVIGATION BAR ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap">
+      <nav class="main-nav">
+        <a class="nav-brand" href="#top">
+          <img src="images/gshieldnew.png" alt="G-SHIELD Logo" class="nav-brand-logo">
+          
+
+        </a>
+        <div class="nav-links">
+          <a href="#problem">Problem</a>
+          <a href="#innovation">Innovation</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#history">Exposure History</a>
+          <a href="#intelligence">AI Layer</a>
+          <a href="#team">Team</a>
+          <a href="#mentors">Mentors</a>
+        </div>
+        <div class="nav-right">
+          <span class="nav-id-tag">SIH ID: 26118</span>
+          <a href="#dashboard" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">View Dashboard</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <div class="pill hero-badge" style="margin-bottom: 22px;">
+            <span class="dot pulse"></span> Prototype Innovation & Smart Automation
+          </div>
+          <h1>SULFSENSE<br><span class="highlight">H₂S Exposure Intelligence</span></h1>
+          <p class="hero-subtitle">Smart H₂S exposure monitoring for safer industrial workplaces.</p>
+          <p class="hero-desc">An affordable, wearable H₂S exposure monitoring concept designed to provide early
+            warnings, exposure history, and actionable safety insights for workers in hazardous environments.</p>
+
+          <div class="hero-actions">
+            <a href="#innovation" class="btn btn-primary">Explore Innovation</a>
+            <a href="#dashboard" class="btn btn-outline">View Dashboard</a>
+          </div>
+
+          <div class="hero-pills">
+            <span class="pill">SIH 2026</span>
+            <span class="pill">ID 26118</span>
+            <span class="pill">Hardware Integration</span>
+            <span class="pill">Smart Safety</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="wristband-card">
+            <div class="readout-header">
+              <span>SENSOR-01 · WRIST DOSIMETER</span>
+              <span class="live-badge"><span class="dot pulse"></span> SIMULATED FEED</span>
+            </div>
+
+            <svg viewBox="0 0 380 260" width="100%">
+              <!-- Forearm silhouette -->
+              <path d="M40 200 Q60 100 150 70 Q250 40 330 90 L330 130 Q250 90 160 115 Q90 135 75 205 Z" fill="#F1F5F9"
+                stroke="#CBD5E1" stroke-width="1.5" />
+
+              <!-- Wristband unit -->
+              <g>
+                <rect x="120" y="100" width="150" height="66" rx="14" fill="#0F172A" stroke="#2563EB"
+                  stroke-width="2" />
+                <rect x="134" y="114" width="122" height="38" rx="6" fill="#1E293B" stroke="#334155" />
+                <text x="145" y="138" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600"
+                  fill="#38BDF8">H₂S 0.4 ppm</text>
+                <circle cx="248" cy="133" r="4" fill="#2563EB">
+                  <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
+                </circle>
+                <rect x="112" y="120" width="10" height="26" rx="4" fill="#334155" />
+                <rect x="268" y="120" width="10" height="26" rx="4" fill="#334155" />
+              </g>
+
+              <!-- Floating H2S molecule visual -->
+              <g opacity="0.9" transform="translate(270,30)">
+                <line x1="0" y1="0" x2="-22" y2="18" stroke="#2563EB" stroke-width="1.6" />
+                <line x1="0" y1="0" x2="22" y2="18" stroke="#2563EB" stroke-width="1.6" />
+                <circle cx="0" cy="0" r="11" fill="#1D4ED8" />
+                <circle cx="-22" cy="18" r="7" fill="#60A5FA" />
+                <circle cx="22" cy="18" r="7" fill="#60A5FA" />
+                <text x="-4" y="4" font-family="'JetBrains Mono'" font-size="9" font-weight="700"
+                  fill="#FFFFFF">S</text>
+              </g>
+
+              <g opacity="0.5" transform="translate(60,40) scale(0.7)">
+                <line x1="0" y1="0" x2="-22" y2="18" stroke="#2563EB" stroke-width="1.6" />
+                <line x1="0" y1="0" x2="22" y2="18" stroke="#2563EB" stroke-width="1.6" />
+                <circle cx="0" cy="0" r="11" fill="#1D4ED8" />
+                <circle cx="-22" cy="18" r="7" fill="#60A5FA" />
+                <circle cx="22" cy="18" r="7" fill="#60A5FA" />
+              </g>
+            </svg>
+
+            <div class="readout-footer">
+              <span>EXPOSURE INDEX <b style="color:var(--blue-bright);">72</b>/100</span>
+              <span class="pill" style="padding: 3px 10px; font-size: 11px;">REALTIME SIMULATION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM SECTION ============ -->
+    <section id="problem">
+      <div class="wrap">
+        <div class="section-tag">The Challenge</div>
+        <div class="section-head reveal">
+          <h2>The invisible industrial hazard</h2>
+          <p>Hydrogen sulfide (H₂S) is a toxic, often odor-masking gas that can build up quickly in confined or poorly
+            ventilated industrial settings, making it difficult for workers to gauge their own exposure in real time.
+          </p>
+        </div>
+
+        <ul class="problem-tags-list reveal">
+          <li>Refineries</li>
+          <li>Wastewater treatment plants</li>
+          <li>Sewage systems</li>
+          <li>Petrochemical industries</li>
+          <li>Confined spaces</li>
+        </ul>
+
+        <div class="hazard-visual-wrap reveal">
+          <svg width="180" height="130" viewBox="0 0 180 130">
+            <circle cx="90" cy="65" r="46" fill="none" stroke="#DC2626" stroke-width="1.4" opacity="0.3">
+              <animate attributeName="r" values="46;62;46" dur="2.5s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="90" cy="65" r="34" fill="rgba(220, 38, 38, 0.08)" stroke="#DC2626" stroke-width="1.6" />
+            <text x="90" y="58" text-anchor="middle" font-family="'Space Grotesk'" font-weight="700" font-size="16"
+              fill="#DC2626">H₂S</text>
+            <text x="90" y="77" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" font-weight="600"
+              fill="#64748B">HIGH HAZARD</text>
+          </svg>
+        </div>
+
+        <div class="cards-grid-3">
+          <div class="card-navy-light reveal">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h4>Early Exposure</h4>
+            <p>Workers may be exposed to low concentrations before the hazard becomes sensory or obvious.</p>
+          </div>
+
+          <div class="card-navy-light reveal">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <h4>Repeated Exposure</h4>
+            <p>Multiple low-level exposure events across a shift are difficult to track manually without wearables.</p>
+          </div>
+
+          <div class="card-navy-light reveal">
+            <div class="card-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <h4>Limited Exposure History</h4>
+            <p>Conventional safety gear rarely maintains a continuous personal digital exposure record.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INNOVATION FLOW ============ -->
+    <section id="innovation">
+      <div class="wrap">
+        <div class="section-tag">Our Innovation</div>
+        <div class="section-head reveal">
+          <h2>From detection to exposure intelligence</h2>
+          <p>A low-cost wearable H₂S dosimeter concept combining passive colorimetric sensing with digital monitoring
+            and AI-assisted risk interpretation.</p>
+        </div>
+
+        <div class="flow-container reveal">
+          <div class="flow-step-node"><span class="step-num">01</span> H₂S Environment Exposure</div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node"><span class="step-num">02</span> Passive Colorimetric Sensor Response</div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node"><span class="step-num">03</span> Colour / Dosimeter Exposure Data</div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node"><span class="step-num">04</span> Digital Microcontroller Reading</div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node highlight-node"><span class="step-num">05</span> AI Risk Analytics & Calibration
+          </div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node highlight-node"><span class="step-num">06</span> Early Warning + Exposure History
+          </div>
+          <div class="flow-line-connector"></div>
+          <div class="flow-step-node"><span class="step-num">07</span> Safer Actionable Decision Making</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI DASHBOARD SECTION ============ -->
+    <section id="dashboard">
+      <div class="wrap">
+        <div class="section-tag">Live Prototype Concept</div>
+        <div class="section-head reveal">
+          <h2>SulfSense AI safety dashboard</h2>
+          <p>A working preview of how exposure data is interpreted and surfaced to safety officers in real time. All
+            figures below are simulated for demonstration.</p>
+        </div>
+
+        <div class="dashboard-outer-frame reveal">
+          <div class="dashboard-inner-wrap">
+
+            <div class="dash-topbar">
+              <h3><span class="dot pulse"></span> SulfSense AI Safety Dashboard</h3>
+              <span class="demo-tag">DEMONSTRATION DATA</span>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-grid-4">
+              <div class="stat-widget">
+                <div class="stat-title">CURRENT H₂S STATUS</div>
+                <div class="stat-number caution-val">CAUTION</div>
+                <div class="stat-subtext">Sensor reading trending up</div>
+              </div>
+
+              <div class="stat-widget">
+                <div class="stat-title">EXPOSURE INDEX</div>
+                <div class="stat-number" id="counterIndex">0</div>
+                <div class="stat-subtext">out of 100 max index</div>
+              </div>
+
+              <div class="stat-widget">
+                <div class="stat-title">TODAY'S EXPOSURE EVENTS</div>
+                <div class="stat-number" id="counterEvents">0</div>
+                <div class="stat-subtext">logged this shift</div>
+              </div>
+
+              <div class="stat-widget">
+                <div class="stat-title">WORKER STATUS</div>
+                <div class="stat-number safe-val" style="font-size: 24px; margin-top: 4px;">MONITORED</div>
+                <div class="stat-subtext">Wearable unit active</div>
+              </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-row-split">
+              <div class="chart-widget-card">
+                <div class="chart-widget-header">
+                  <h4>H₂S Exposure Trend</h4>
+                  <span>PPM / SENSOR READING · DEMO FEED</span>
+                </div>
+                <canvas id="trendChart" height="220"></canvas>
+              </div>
+
+              <div class="chart-widget-card">
+                <div class="chart-widget-header">
+                  <h4>Current Risk Index</h4>
+                </div>
+                <div class="gauge-center-box">
+                  <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle cx="75" cy="75" r="62" fill="none" stroke="#E2E8F0" stroke-width="12" />
+                    <circle id="riskArc" cx="75" cy="75" r="62" fill="none" stroke="#D97706" stroke-width="12"
+                      stroke-linecap="round" stroke-dasharray="389.6" stroke-dashoffset="389.6"
+                      transform="rotate(-90 75 75)" />
+                    <text x="75" y="70" text-anchor="middle" font-family="'Space Grotesk'" font-weight="700"
+                      font-size="26" fill="#0F172A" id="riskPercent">0%</text>
+                    <text x="75" y="90" text-anchor="middle" font-family="'JetBrains Mono'" font-size="10"
+                      font-weight="600" fill="#D97706">MODERATE</text>
+                  </svg>
+                  <div class="stat-title" style="margin-top: 12px;">LIVE RISK LEVEL</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Risk Zone Chart -->
+            <div class="chart-widget-card" style="margin-bottom: 20px;">
+              <div class="chart-widget-header">
+                <h4>Exposure Risk Over Time</h4>
+                <span>SAFE (0-40) / CAUTION (40-70) / HIGH RISK (70-100) ZONES</span>
+              </div>
+              <canvas id="riskChart" height="180"></canvas>
+            </div>
+
+            <!-- Bottom Row Insights & Alerts -->
+            <div class="dash-bottom-grid">
+              <div class="ai-insight-box">
+                <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+                <div>
+                  <h4>AI SAFETY INSIGHT</h4>
+                  <p>Repeated exposure events detected during the monitored period. Consider moving the worker to a
+                    safer zone and verifying PPE and ventilation conditions.</p>
+                </div>
+              </div>
+
+              <div class="alerts-column">
+                <div class="alert-item caution">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                  CAUTION — Exposure trend increasing
+                </div>
+                <div class="alert-item danger">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  HIGH RISK — Threshold exceeded, check safety PPE
+                </div>
+                <div class="alert-item safe">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  SAFE — Baseline atmospheric level normal
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPOSURE HISTORY TABLE ============ -->
+    <section id="history">
+      <div class="wrap">
+        <div class="section-tag">Exposure History</div>
+        <div class="section-head reveal">
+          <h2>A continuous exposure record</h2>
+          <p>Every logged reading builds a clear digital timeline safety officers can review instead of relying on
+            memory or manual logbooks.</p>
+        </div>
+
+        <div class="table-filter-bar reveal">
+          <button class="filter-tab active" data-range="today">Today</button>
+          <button class="filter-tab" data-range="7d">7 Days</button>
+          <button class="filter-tab" data-range="30d">30 Days</button>
+        </div>
+
+        <div class="table-responsive-container reveal">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Exposure Level</th>
+                <th>Duration</th>
+                <th>Risk Category</th>
+                <th>Recommended Action</th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <!-- Dynamically rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI RISK ANALYSIS ============ -->
+    <section id="intelligence">
+      <div class="wrap">
+        <div class="section-tag">Intelligence Layer</div>
+        <div class="section-head reveal">
+          <h2>AI that turns exposure data into safety insight</h2>
+          <p>SulfSense proposes an AI-assisted interpretation layer that analyzes sensor trends and generates actionable
+            safety recommendations for safety managers.</p>
+        </div>
+
+        <div class="pipeline-flow reveal">
+          <div class="pipeline-node">Sensor Data</div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">Pattern Detection</div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">Trend Analysis</div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">Risk Classification</div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">Safety Recommendation</div>
+        </div>
+
+        <div class="cards-grid-4">
+          <div class="card-navy-light reveal">
+            <h4>Exposure Pattern</h4>
+            <p>Identifies recurring low-level exposure events across a work shift.</p>
+          </div>
+          <div class="card-navy-light reveal">
+            <h4>Trend Detection</h4>
+            <p>Flags gradual increases before gas concentrations cross unsafe thresholds.</p>
+          </div>
+          <div class="card-navy-light reveal">
+            <h4>Risk Classification</h4>
+            <p>Groups exposure readings into safe, caution, and high-risk bands.</p>
+          </div>
+          <div class="card-navy-light reveal">
+            <h4>Safety Recommendation</h4>
+            <p>Suggests PPE checks, ventilation improvements, or relocation steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY SULFSENSE ============ -->
+    <section id="why">
+      <div class="wrap">
+        <div class="section-tag">Comparison</div>
+        <div class="section-head reveal">
+          <h2>Why SulfSense?</h2>
+        </div>
+
+        <div class="compare-grid-2">
+          <div class="compare-card traditional reveal">
+            <h4>CONVENTIONAL APPROACH</h4>
+            <ul>
+              <li>Manual observation & subjective detection</li>
+              <li>Limited or fragmented exposure history</li>
+              <li>Reactive response after exposure occurs</li>
+              <li>Difficult to track cumulative low-dose events</li>
+            </ul>
+          </div>
+
+          <div class="compare-card sulfsense reveal">
+            <h4>SULFSENSE INNOVATION</h4>
+            <ul>
+              <li>Affordable wearable monitoring concept</li>
+              <li>Continuous digital exposure logbook</li>
+              <li>Early warning alert system</li>
+              <li>AI-assisted exposure risk interpretation</li>
+              <li>Worker-centric design for hazardous sites</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPACT & APPLICATIONS ============ -->
+    <section id="impact">
+      <div class="wrap">
+        <div class="section-tag">Potential Impact</div>
+        <div class="section-head reveal">
+          <h2>Safety before incident</h2>
+        </div>
+
+        <div class="impact-grid-4" style="margin-bottom: 60px;">
+          <div class="impact-card reveal">
+            <div class="impact-num">01</div>
+            <h4>Early Warning</h4>
+            <p>Identify hazardous exposure trends before acute toxicity symptoms occur.</p>
+          </div>
+          <div class="impact-card reveal">
+            <div class="impact-num">02</div>
+            <h4>Exposure Awareness</h4>
+            <p>Transform raw sensor data into understandable safety intelligence.</p>
+          </div>
+          <div class="impact-card reveal">
+            <div class="impact-num">03</div>
+            <h4>Worker Protection</h4>
+            <p>Support prompt ventilation, PPE verification, and evacuation decisions.</p>
+          </div>
+          <div class="impact-card reveal">
+            <div class="impact-num">04</div>
+            <h4>Data-Driven Safety</h4>
+            <p>Build a solid foundation for occupational hygiene & risk analytics.</p>
+          </div>
+        </div>
+
+        <div class="section-tag">Application Areas</div>
+        <div class="section-head reveal" style="margin-bottom: 30px;">
+          <h2>Deploys across high-risk industries</h2>
+        </div>
+
+        <div class="app-grid-5">
+          <div class="app-icon-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 22h16M7 22V11l4 2V11l4 2V11l4 2v11" />
+              <path d="M7 6l5-3 5 3" />
+            </svg>
+            <span>Refineries</span>
+          </div>
+
+          <div class="app-icon-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+            </svg>
+            <span>Wastewater Treatment</span>
+          </div>
+
+          <div class="app-icon-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Petrochemical Industries</span>
+          </div>
+
+          <div class="app-icon-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>Confined Spaces</span>
+          </div>
+
+          <div class="app-icon-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <span>Sewage / Waste Systems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARCHITECTURE SECTION ============ -->
+    <section id="architecture">
+      <div class="wrap">
+        <div class="section-tag" style="justify-content: center;">System Design</div>
+        <div class="section-head center reveal">
+          <h2>Technical Architecture</h2>
+          <p>End-to-end data pipeline from physical gas exposure to AI dashboard alerts.</p>
+        </div>
+
+        <div class="arch-card-wrapper reveal">
+          <div class="flow-container">
+            <div class="flow-step-node"><span class="step-num">◆</span> H₂S Industrial Environment</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Wearable Passive Sensor / Dosimeter</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Colorimetric Reaction & Optical Response</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Digital Data Acquisition Unit</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Microcontroller Interface (BLE/WiFi)</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Cloud / Local Safety Database</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node highlight-node"><span class="step-num">◆</span> AI Risk & Dose Estimation Model
+            </div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node"><span class="step-num">◆</span> Web Dashboard & Mobile App</div>
+            <div class="flow-line-connector"></div>
+            <div class="flow-step-node highlight-node"><span class="step-num">◆</span> Real-Time Alerts & Exposure Log
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       TEAM MEMBERS SECTION (6 MEMBERS IN EXACT ORDER SPECIFIED)
+       ========================================================================== -->
+    <section id="team">
+      <div class="wrap">
+        <div class="section-tag">Student Innovators</div>
+        <div class="section-head reveal">
+          <h2>Meet the Team</h2>
+          <p>The talented engineering and biotechnology students behind the SulfSense innovation concept.</p>
+        </div>
+
+        <div class="team-grid-3">
+
+          <!-- Member 1: Lavanya Meiyammai P -->
+          <div class="member-card tilt-card reveal">
+
+            <div class="photo-frame">
+              <a href="https://www.linkedin.com/in/lavanya-meiyammai-p-2a8522384" target="_blank">
+                <img src="images/lavanya.jpeg" alt="Lavanya Meiyammai P" class="member-photo"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              </a>
+
+              <div class="avatar-fallback">LM</div>
+            </div>
+
+            <h4>Lavanya Meiyammai P</h4>
+            <div class="member-role">Validation, Testing & Documentation Lead</div>
+            <div class="member-edu">B.Tech Biotechnology Student 2nd Yr</div>
+          </div>
+
+          <!-- Member 2: Vignesh R S -->
+          <div class="member-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MEMBER 2: Replace 'images/team/member2.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/vicky.jpeg" alt="Vignesh R S" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">VR</div>
+              <!-- <span class="photo-tag-badge">02</span> -->
+            </div>
+            <h4>Vignesh R S</h4>
+            <div class="member-role">Chemical Sensor & Dosimeter Research Lead</div>
+            <div class="member-edu">B.Tech Biotechnology 2nd Yr</div>
+          </div>
+
+          <!-- Member 3: Kandeepan A -->
+          <div class="member-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MEMBER 3: Replace 'images/team/member3.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/kandee.jpeg" alt="Kandeepan A" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">KA</div>
+              <!-- <span class="photo-tag-badge">03</span> -->
+            </div>
+            <h4>Kandeepan A</h4>
+            <div class="member-role">Hardware & Wearable Integration Engineer</div>
+            <div class="member-edu">B.Tech Biotechnology 2nd Yr</div>
+          </div>
+
+          <!-- Member 4: Vishnu Vardhan V N -->
+          <div class="member-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MEMBER 4: Replace 'images/team/member4.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/vishnu.jpg" alt="Vishnu Vardhan V N" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">VV</div>
+              <!-- <span class="photo-tag-badge">04</span> -->
+            </div>
+            <h4>Vishnu Vardhan V N</h4>
+            <div class="member-role">Mobile Application & Image Processing Engineer</div>
+            <div class="member-edu">B.Tech Information Technology 2nd Yr</div>
+          </div>
+
+          <!-- Member 5: Mohammed Shibil M -->
+          <div class="member-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MEMBER 5: Replace 'images/team/member5.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/shibil.jpeg" alt="Mohammed Shibil M" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">MS</div>
+              <!-- <span class="photo-tag-badge">05</span> -->
+            </div>
+            <h4>Mohammed Shibil M</h4>
+            <div class="member-role">AI-Based Dose Estimation & Calibration Engineer</div>
+            <div class="member-edu">B.Tech Information Technology 2nd Yr</div>
+          </div>
+
+          <!-- Member 6: Saranya A -->
+          <div class="member-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MEMBER 6: Replace 'images/team/member6.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/sara.jpeg" alt="Saranya A" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">SA</div>
+              <!-- <span class="photo-tag-badge">06</span> -->
+            </div>
+            <h4>Saranya A</h4>
+            <div class="member-role">Backend & Exposure Monitoring Systems Engineer</div>
+            <div class="member-edu">B.Tech Information Technology 2nd Yr</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       MENTORS SECTION (IN EXACT ORDER & LINE STRUCTURE SPECIFIED)
+       ========================================================================== -->
+    <section id="mentors">
+      <div class="wrap">
+        <div class="section-tag">Guidance & Advisory</div>
+        <div class="section-head reveal">
+          <h2>Our Mentors</h2>
+          <p>Distinguished faculty and leaders guiding our hackathon innovation.</p>
+        </div>
+
+        <!-- FIRST LINE SECTION (2 MENTORS) -->
+        <div class="mentor-line-heading reveal">LEADERSHIP MENTORS</div>
+        <div class="mentor-grid-2">
+
+          <!-- Mentor 1: Mr.K.Muthusamy -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 1: Replace 'images/mentors/mentor1.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/muthusamysir.jpg" alt="Mr. K. Muthusamy" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">KM</div>
+            </div>
+            <h4>Mr. K. Muthusamy</h4>
+            <div class="mentor-role">Head - Technical Competition and Hackathon</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+          <!-- Mentor 2: Er Gajendran Parthasarathi -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 2: Replace 'images/mentors/mentor2.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/gajendransir.jpg" alt="Er Gajendran Parthasarathi" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">GP</div>
+            </div>
+            <h4>Er Gajendran Parthasarathi</h4>
+            <div class="mentor-role">Head - School of Design and Innovation</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+        </div>
+
+        <!-- NEXT LINE SECTION (4 MENTORS) -->
+        <div class="mentor-line-heading reveal" style="margin-top: 40px;">FACULTY MENTORS</div>
+        <div class="mentor-grid-4">
+
+          <!-- Mentor 1: Mrs. Mangayarkarasi -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 3: Replace 'images/mentors/mentor3.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/mangayarkarasimam.jpeg" alt="Mrs. Mangayarkarasi" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">MM</div>
+            </div>
+            <h4>Mrs. Mangayarkarasi</h4>
+            <div class="mentor-role">Assistant Professor <br>Dept of Biotechnology</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+          <!-- Mentor 2: Mrs. Mangayarkarasi -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 4: Replace 'images/mentors/mentor4.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/sathyapriyamam.jpeg" alt="Mrs. Sathyapriya A" class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">MM</div>
+            </div>
+            <h4>Mrs. Sathyapriya A</h4>
+            <div class="mentor-role">Head of the Department <br>Dept of Biotechnology</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+          <!-- Mentor 3: Mrs. Mangayarkarasi -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 5: Replace 'images/mentors/mentor5.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/sureshsir.jpeg" alt="Mr. Suresh Kumar A " class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">MM</div>
+            </div>  
+            <h4>Mr. Suresh Kumar A </h4>
+            <div class="mentor-role">Assistant Professor <br>Dept of Information Technology</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+          <!-- Mentor 4: Mrs. Mangayarkarasi -->
+          <div class="mentor-card tilt-card reveal">
+            <!-- PHOTO PLACEHOLDER FOR MENTOR 6: Replace 'images/mentors/mentor6.jpg' with your photo -->
+            <div class="photo-frame">
+              <img src="images/karthikamam.jpg" alt="Mrs. Karthika R " class="member-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="avatar-fallback">MM</div>
+            </div>
+            <h4>Mrs. Karthika R </h4>
+            <div class="mentor-role">Head of the Department <br>Dept of Information Technology</div>
+            <!-- <div class="mentor-dept">Rathinam Technical Campus</div> -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECT INFO SECTION ============
+    <section id="project-info">
+      <div class="wrap">
+        <div class="section-tag">Project Overview</div>
+        <div class="info-card-box reveal">
+          <div class="info-table-grid">
+            <div class="info-cell">
+              <div class="info-cell-label">PROJECT NAME</div>
+              <div class="info-cell-value">SulfSense</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-cell-label">SIH TEAM ID</div>
+              <div class="info-cell-value">26118</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-cell-label">TEAM STRENGTH</div>
+              <div class="info-cell-value">6 Members</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-cell-label">ACADEMIC LEVEL</div>
+              <div class="info-cell-value">2nd Year B.Tech (Biotechnology & IT)</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-cell-label">INSTITUTION</div>
+              <div class="info-cell-value">Rathinam Technical Campus</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-cell-label">PROJECT DOMAIN</div>
+              <div class="info-cell-value">Industrial Safety + Smart Automation + Biotech AI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ============ FINAL CTA SECTION ============ -->
+    <section class="cta-banner-section">
+      <div class="wrap">
+        <h2 class="reveal">Safer workplaces start with early awareness.</h2>
+        <p class="reveal">SulfSense aims to transform hazardous gas exposure from an invisible risk into understandable,
+          actionable safety intelligence.</p>
+        <a href="#dashboard" class="btn btn-primary reveal">Explore the Dashboard</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <h3>SULFSENSE</h3>
+          <p>AI-Assisted H₂S Exposure Monitoring & Team Portfolio</p>
+        </div>
+        <div class="footer-meta-info">
+          <div>Smart India Hackathon 2026 | Team ID: 26118</div>
+          <div>Rathinam Technical Campus · Coimbatore</div>
+          <div>Biotechnology & Information Technology Departments</div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        SULFSENSE — PROTOTYPE / INNOVATION CONCEPT · SMART INDIA HACKATHON 2026
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Back To Top Button -->
+  <a href="#top" class="back-to-top" id="backToTop" title="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </a>
+
+  <!-- Custom Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
