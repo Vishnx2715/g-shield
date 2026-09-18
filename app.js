@@ -141,15 +141,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!canvas) return null;
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    const cssHeight = parseInt(canvas.getAttribute('height'), 10) || 200;
+    const w = rect.width || canvas.clientWidth || 300;
+    const isMobile = window.innerWidth <= 640;
     
-    canvas.width = rect.width * dpr;
-    canvas.height = cssHeight * dpr;
+    // Set appropriate height based on screen size
+    let cssHeight = parseInt(canvas.getAttribute('height'), 10) || 200;
+    if (isMobile) {
+      cssHeight = canvas.id === 'riskChart' ? 145 : 170;
+    }
+    
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(cssHeight * dpr);
     canvas.style.height = cssHeight + 'px';
+    canvas.style.width = '100%';
     
     const ctx = canvas.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
-    return { ctx, w: rect.width, h: cssHeight };
+    return { ctx, w, h: cssHeight, isMobile };
   }
 
   // ===== 8. Draw Exposure Trend Chart =====
@@ -157,14 +166,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('trendChart');
     const res = setupCanvas(canvas);
     if (!res) return;
-    const { ctx, w, h } = res;
+    const { ctx, w, h, isMobile } = res;
 
     const data = [8, 12, 10, 18, 26, 22, 35, 48, 40, 55, 62, 58, 72, 65, 50, 38];
-    const labels = ['06:00','','','09:00','','','12:00','','','15:00','','','18:00','','','21:00'];
-    const pad = { l: 36, r: 16, t: 16, b: 26 };
+    const labels = isMobile && w < 380
+      ? ['06:00','','','','','','12:00','','','','','','18:00','','','21:00']
+      : ['06:00','','','09:00','','','12:00','','','15:00','','','18:00','','','21:00'];
+    const pad = isMobile ? { l: 26, r: 10, t: 12, b: 20 } : { l: 36, r: 16, t: 16, b: 26 };
     const max = 80;
-    const plotW = w - pad.l - pad.r;
-    const plotH = h - pad.t - pad.b;
+    const plotW = Math.max(10, w - pad.l - pad.r);
+    const plotH = Math.max(10, h - pad.t - pad.b);
 
     ctx.clearRect(0, 0, w, h);
 
@@ -179,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
 
       ctx.fillStyle = '#64748B';
-      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.font = (isMobile ? '8.5px' : '10px') + ' "JetBrains Mono", monospace';
       ctx.textAlign = 'right';
-      ctx.fillText(Math.round(max - (max / 4) * i), pad.l - 8, y + 3);
+      ctx.fillText(Math.round(max - (max / 4) * i), pad.l - (isMobile ? 5 : 8), y + 3);
     }
 
     const points = data.map((v, i) => ({
@@ -206,27 +217,27 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.beginPath();
     points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
     ctx.strokeStyle = '#2563EB';
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = isMobile ? 2 : 2.5;
     ctx.lineJoin = 'round';
     ctx.stroke();
 
     // Line Dots
     points.forEach(p => {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, isMobile ? 2.5 : 3, 0, Math.PI * 2);
       ctx.fillStyle = '#FFFFFF';
       ctx.fill();
-      ctx.lineWidth = 2;
+      ctx.lineWidth = isMobile ? 1.5 : 2;
       ctx.strokeStyle = '#2563EB';
       ctx.stroke();
     });
 
     // X Axis Labels
     ctx.fillStyle = '#64748B';
-    ctx.font = '10px "JetBrains Mono", monospace';
+    ctx.font = (isMobile ? '8.5px' : '10px') + ' "JetBrains Mono", monospace';
     ctx.textAlign = 'center';
     labels.forEach((l, i) => {
-      if (l) ctx.fillText(l, points[i].x, h - 6);
+      if (l) ctx.fillText(l, points[i].x, h - (isMobile ? 4 : 6));
     });
   }
 
@@ -235,14 +246,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('riskChart');
     const res = setupCanvas(canvas);
     if (!res) return;
-    const { ctx, w, h } = res;
+    const { ctx, w, h, isMobile } = res;
 
     const data = [15, 22, 18, 30, 45, 55, 48, 68, 72, 60, 42, 30];
-    const labels = ['08:00','','10:00','','12:00','','14:00','','16:00','','18:00',''];
-    const pad = { l: 36, r: 16, t: 16, b: 26 };
+    const labels = isMobile && w < 380
+      ? ['08:00','','','','12:00','','','','16:00','','18:00','']
+      : ['08:00','','10:00','','12:00','','14:00','','16:00','','18:00',''];
+    const pad = isMobile ? { l: 26, r: 10, t: 12, b: 20 } : { l: 36, r: 16, t: 16, b: 26 };
     const max = 100;
-    const plotW = w - pad.l - pad.r;
-    const plotH = h - pad.t - pad.b;
+    const plotW = Math.max(10, w - pad.l - pad.r);
+    const plotH = Math.max(10, h - pad.t - pad.b);
 
     ctx.clearRect(0, 0, w, h);
 
@@ -271,9 +284,9 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
 
       ctx.fillStyle = '#64748B';
-      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.font = (isMobile ? '8.5px' : '10px') + ' "JetBrains Mono", monospace';
       ctx.textAlign = 'right';
-      ctx.fillText(v, pad.l - 8, y + 3);
+      ctx.fillText(v, pad.l - (isMobile ? 5 : 8), y + 3);
     });
 
     const points = data.map((v, i) => ({
@@ -285,34 +298,38 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.beginPath();
     points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
     ctx.strokeStyle = '#D97706';
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = isMobile ? 2 : 2.5;
     ctx.lineJoin = 'round';
     ctx.stroke();
 
     points.forEach(p => {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, isMobile ? 2.5 : 3, 0, Math.PI * 2);
       ctx.fillStyle = '#FFFFFF';
       ctx.fill();
-      ctx.lineWidth = 2;
+      ctx.lineWidth = isMobile ? 1.5 : 2;
       ctx.strokeStyle = '#D97706';
       ctx.stroke();
     });
 
     // X Axis Labels
     ctx.fillStyle = '#64748B';
-    ctx.font = '10px "JetBrains Mono", monospace';
+    ctx.font = (isMobile ? '8.5px' : '10px') + ' "JetBrains Mono", monospace';
     ctx.textAlign = 'center';
     labels.forEach((l, i) => {
-      if (l) ctx.fillText(l, points[i].x, h - 6);
+      if (l) ctx.fillText(l, points[i].x, h - (isMobile ? 4 : 6));
     });
   }
 
+  let resizeTimeout;
   window.addEventListener('resize', () => {
-    if (dashboardTriggered) {
-      drawTrendChart();
-      drawRiskChart();
-    }
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (dashboardTriggered) {
+        drawTrendChart();
+        drawRiskChart();
+      }
+    }, 100);
   });
 
   // ===== 10. Filterable Exposure History Table =====
