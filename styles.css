@@ -709,12 +709,47 @@ nav.main-nav {
 /* ============ DESKTOP: keep old nav-links, hide drawer ============ */
 .mobile-drawer { display: none; }
 
+/* Quick links (Problem + Innovation) shown beside logo on mobile */
+.nav-quick-links {
+  display: none;
+}
+
 @media (max-width: 960px) {
   .hamburger { display: flex; }
   .nav-links { display: none; }
   .nav-right .btn { display: none; }
   .nav-right .nav-id-tag { display: none; }
   .mobile-drawer { display: flex; }
+
+  /* Show quick links on mobile */
+  .nav-quick-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  .nav-quick-link {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy-700);
+    padding: 7px 12px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border-color);
+    background: #FFFFFF;
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+  }
+
+  .nav-quick-link:hover,
+  .nav-quick-link.active {
+    color: var(--blue-bright);
+    border-color: var(--blue-bright);
+    background: var(--blue-soft);
+  }
 }
 
 /* ============ HERO SECTION ============ */
