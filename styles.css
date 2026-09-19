@@ -721,23 +721,38 @@ nav.main-nav {
   .nav-right .nav-id-tag { display: none; }
   .mobile-drawer { display: flex; }
 
-  /* Fix nav layout on mobile */
+  /* Fix nav layout on mobile — fixed height, never grows */
   nav.main-nav {
-    height: 66px;
+    height: 52px;
+    min-height: 52px;
+    max-height: 52px;
     align-items: center;
     gap: 0;
+    overflow: hidden;
+  }
+
+  /* Reduce header padding on mobile so total bar stays compact */
+  header.site-header {
+    padding: 6px 0;
+  }
+
+  header.site-header.scrolled {
+    padding: 4px 0;
   }
 
   /* Tighten the brand so it doesn't overflow */
   .nav-brand {
     margin-left: 0;
     flex-shrink: 0;
+    align-items: center;
   }
 
-  /* Constrain logo: drop the big height & negative margin on mobile */
+  /* Logo: fixed size, clipped to nav height — no negative margins */
   .nav-brand-logo {
-    height: 58px;
+    height: 52px;
+    width: auto;
     margin: 0;
+    object-fit: contain;
   }
 
   /* Quick links: take remaining space between logo and hamburger */
