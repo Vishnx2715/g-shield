@@ -721,13 +721,33 @@ nav.main-nav {
   .nav-right .nav-id-tag { display: none; }
   .mobile-drawer { display: flex; }
 
-  /* Show quick links on mobile */
+  /* Fix nav layout on mobile */
+  nav.main-nav {
+    height: 56px;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Tighten the brand so it doesn't overflow */
+  .nav-brand {
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+
+  /* Constrain logo: drop the big height & negative margin on mobile */
+  .nav-brand-logo {
+    height: 44px;
+    margin: 0;
+  }
+
+  /* Quick links: take remaining space between logo and hamburger */
   .nav-quick-links {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     flex: 1;
-    margin-left: 10px;
+    padding: 0 10px;
+    overflow: hidden;
   }
 
   .nav-quick-link {
@@ -735,13 +755,14 @@ nav.main-nav {
     font-size: 13px;
     font-weight: 600;
     color: var(--navy-700);
-    padding: 7px 12px;
+    padding: 7px 13px;
     border-radius: var(--radius-sm);
     border: 1.5px solid var(--border-color);
     background: #FFFFFF;
     white-space: nowrap;
-    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    line-height: 1;
     text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   }
 
   .nav-quick-link:hover,
@@ -749,6 +770,13 @@ nav.main-nav {
     color: var(--blue-bright);
     border-color: var(--blue-bright);
     background: var(--blue-soft);
+  }
+
+  /* Keep hamburger flush to the right */
+  .nav-right {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
 }
 
