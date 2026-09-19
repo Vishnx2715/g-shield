@@ -396,12 +396,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== HAMBURGER MENU =====
 (function () {
-  const hamburgerBtn  = document.getElementById('hamburgerBtn');
-  const navLinks      = document.getElementById('navLinks');
-  const navOverlay    = document.getElementById('navOverlay');
+  const hamburgerBtn   = document.getElementById('hamburgerBtn');
+  const mobileDrawer   = document.getElementById('mobileDrawer');
+  const navOverlay     = document.getElementById('navOverlay');
   const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
-  if (!hamburgerBtn || !navLinks || !navOverlay) return;
+  if (!hamburgerBtn || !mobileDrawer || !navOverlay) return;
 
   let isOpen = false;
 
@@ -409,7 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
     isOpen = true;
     hamburgerBtn.classList.add('open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
-    navLinks.classList.add('open');
+    mobileDrawer.classList.add('open');
+    mobileDrawer.setAttribute('aria-hidden', 'false');
     navOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -418,40 +419,27 @@ document.addEventListener('DOMContentLoaded', () => {
     isOpen = false;
     hamburgerBtn.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
-    navLinks.classList.remove('open');
+    mobileDrawer.classList.remove('open');
+    mobileDrawer.setAttribute('aria-hidden', 'true');
     navOverlay.classList.remove('open');
-    // Restore scroll after drawer slides out
-    setTimeout(() => {
-      if (!isOpen) document.body.style.overflow = '';
-    }, 400);
+    setTimeout(() => { if (!isOpen) document.body.style.overflow = ''; }, 400);
   }
 
-  hamburgerBtn.addEventListener('click', () => {
-    isOpen ? closeMenu() : openMenu();
-  });
+  hamburgerBtn.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
 
-  // Close button inside drawer
-  if (drawerCloseBtn) {
-    drawerCloseBtn.addEventListener('click', closeMenu);
-  }
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMenu);
 
-  // Close on overlay click
   navOverlay.addEventListener('click', closeMenu);
 
-  // Close on any nav link click (including drawer footer CTA)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu();
-    });
+  // Close on any drawer link tap
+  mobileDrawer.querySelectorAll('.drawer-link, .drawer-cta').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  // Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isOpen) closeMenu();
   });
 
-  // Prevent touch scroll bleeding through overlay onto body
-  navLinks.addEventListener('touchmove', (e) => {
-    e.stopPropagation();
-  }, { passive: true });
+  // Prevent page scroll bleed-through on touch
+  mobileDrawer.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
 })();

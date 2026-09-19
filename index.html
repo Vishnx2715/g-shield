@@ -41,8 +41,58 @@
     </div>
   </div>
 
-  <!-- Nav Overlay Backdrop -->
+  <!-- Nav Overlay Backdrop (body level, not inside header) -->
   <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Mobile Nav Drawer (body level so z-index works correctly) -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-top-bar"></div>
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="images/gshieldnew.png" alt="G-SHIELD" class="drawer-logo">
+        <span class="drawer-brand-name">G-SHIELD</span>
+      </div>
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="Close navigation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#problem" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+        Problem
+      </a>
+      <a href="#innovation" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        Innovation
+      </a>
+      <a href="#dashboard" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+        Dashboard
+      </a>
+      <a href="#why" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+        Why SulfSense
+      </a>
+      <a href="#intelligence" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
+        AI Layer
+      </a>
+      <a href="#team" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        Team
+      </a>
+      <a href="#mentors" class="drawer-link">
+        <span class="drawer-link-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        Mentors
+      </a>
+    </nav>
+    <div class="drawer-footer">
+      <a href="#dashboard" class="btn btn-primary drawer-cta">View Dashboard</a>
+      <span class="drawer-sih-tag">SIH 2026 · ID 26118</span>
+    </div>
+  </div>
 
   <!-- ============ MAIN NAVIGATION BAR ============ -->
   <header class="site-header" id="siteHeader">
@@ -50,61 +100,19 @@
       <nav class="main-nav">
         <a class="nav-brand" href="#top">
           <img src="images/gshieldnew.png" alt="G-SHIELD Logo" class="nav-brand-logo">
-          
-
         </a>
         <div class="nav-links" id="navLinks">
-          <!-- Drawer header -->
-          <div class="drawer-header">
-            <div class="drawer-brand">
-              <img src="images/gshieldnew.png" alt="G-SHIELD" class="drawer-logo">
-              <span class="drawer-brand-name">G-SHIELD</span>
-            </div>
-            <button class="drawer-close" id="drawerCloseBtn" aria-label="Close navigation">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-              </svg>
-            </button>
-          </div>
-          <!-- Nav links -->
-          <a href="#problem" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            Problem
-          </a>
-          <a href="#innovation" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Innovation
-          </a>
-          <a href="#dashboard" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            Dashboard
-          </a>
-          <a href="#why" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Why SulfSense
-          </a>
-          <a href="#intelligence" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            AI Layer
-          </a>
-          <a href="#team" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Team
-          </a>
-          <a href="#mentors" class="nav-link-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Mentors
-          </a>
-          <!-- Drawer footer -->
-          <div class="drawer-footer">
-            <a href="#dashboard" class="btn btn-primary">View Dashboard</a>
-            <span class="drawer-sih-tag">SIH 2026 · ID 26118</span>
-          </div>
+          <a href="#problem">Problem</a>
+          <a href="#innovation">Innovation</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#why">Why SulfSense</a>
+          <a href="#intelligence">AI Layer</a>
+          <a href="#team">Team</a>
+          <a href="#mentors">Mentors</a>
         </div>
         <div class="nav-right">
           <span class="nav-id-tag">SIH ID: 26118</span>
           <a href="#dashboard" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">View Dashboard</a>
-          <!-- Hamburger Button -->
           <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
