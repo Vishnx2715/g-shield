@@ -396,13 +396,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== HAMBURGER MENU =====
 (function () {
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navLinks = document.getElementById('navLinks');
-  const navOverlay = document.getElementById('navOverlay');
+  const hamburgerBtn  = document.getElementById('hamburgerBtn');
+  const navLinks      = document.getElementById('navLinks');
+  const navOverlay    = document.getElementById('navOverlay');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
   if (!hamburgerBtn || !navLinks || !navOverlay) return;
 
+  let isOpen = false;
+
   function openMenu() {
+    isOpen = true;
     hamburgerBtn.classList.add('open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
     navLinks.classList.add('open');
@@ -411,35 +415,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeMenu() {
+    isOpen = false;
     hamburgerBtn.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
     navLinks.classList.remove('open');
     navOverlay.classList.remove('open');
-    document.body.style.overflow = '';
+    // Restore scroll after drawer slides out
+    setTimeout(() => {
+      if (!isOpen) document.body.style.overflow = '';
+    }, 400);
   }
 
   hamburgerBtn.addEventListener('click', () => {
-    if (navLinks.classList.contains('open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    isOpen ? closeMenu() : openMenu();
   });
+
+  // Close button inside drawer
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', closeMenu);
+  }
 
   // Close on overlay click
   navOverlay.addEventListener('click', closeMenu);
 
-  // Close on nav link click (smooth scroll then close)
+  // Close on any nav link click (including drawer footer CTA)
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       closeMenu();
     });
   });
 
-  // Close on Escape key
+  // Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-      closeMenu();
-    }
+    if (e.key === 'Escape' && isOpen) closeMenu();
   });
+
+  // Prevent touch scroll bleeding through overlay onto body
+  navLinks.addEventListener('touchmove', (e) => {
+    e.stopPropagation();
+  }, { passive: true });
 })();
