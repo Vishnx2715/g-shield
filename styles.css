@@ -723,7 +723,7 @@ nav.main-nav {
 
   /* Fix nav layout on mobile */
   nav.main-nav {
-    height: 56px;
+    height: 66px;
     align-items: center;
     gap: 0;
   }
@@ -736,7 +736,7 @@ nav.main-nav {
 
   /* Constrain logo: drop the big height & negative margin on mobile */
   .nav-brand-logo {
-    height: 44px;
+    height: 58px;
     margin: 0;
   }
 
