@@ -41,6 +41,9 @@
     </div>
   </div>
 
+  <!-- Nav Overlay Backdrop -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
   <!-- ============ MAIN NAVIGATION BAR ============ -->
   <header class="site-header" id="siteHeader">
     <div class="wrap">
@@ -50,18 +53,24 @@
           
 
         </a>
-        <div class="nav-links">
-          <a href="#problem">Problem</a>
-          <a href="#innovation">Innovation</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#history">Exposure History</a>
-          <a href="#intelligence">AI Layer</a>
-          <a href="#team">Team</a>
-          <a href="#mentors">Mentors</a>
+        <div class="nav-links" id="navLinks">
+          <a href="#problem" class="nav-link-item">Problem</a>
+          <a href="#innovation" class="nav-link-item">Innovation</a>
+          <a href="#dashboard" class="nav-link-item">Dashboard</a>
+          <a href="#why" class="nav-link-item">Why Sulfsense</a>
+          <a href="#intelligence" class="nav-link-item">AI Layer</a>
+          <a href="#team" class="nav-link-item">Team</a>
+          <a href="#mentors" class="nav-link-item">Mentors</a>
         </div>
         <div class="nav-right">
           <span class="nav-id-tag">SIH ID: 26118</span>
           <a href="#dashboard" class="btn btn-primary" style="padding: 10px 20px; font-size: 13.5px;">View Dashboard</a>
+          <!-- Hamburger Button -->
+          <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
     </div>
@@ -380,7 +389,7 @@
       </div>
     </section>
 
-    <!-- ============ EXPOSURE HISTORY TABLE ============ -->
+    <!-- ============ EXPOSURE HISTORY TABLE ============
     <section id="history">
       <div class="wrap">
         <div class="section-tag">Exposure History</div>
@@ -410,11 +419,11 @@
             </thead>
             <tbody id="historyTableBody">
               <!-- Dynamically rendered by app.js -->
-            </tbody>
+            <!-- </tbody>
           </table>
         </div>
       </div>
-    </section>
+    </section> --> 
 
     <!-- ============ AI RISK ANALYSIS ============ -->
     <section id="intelligence">
@@ -566,41 +575,6 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
             <span>Sewage / Waste Systems</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ARCHITECTURE SECTION ============ -->
-    <section id="architecture">
-      <div class="wrap">
-        <div class="section-tag" style="justify-content: center;">System Design</div>
-        <div class="section-head center reveal">
-          <h2>Technical Architecture</h2>
-          <p>End-to-end data pipeline from physical gas exposure to AI dashboard alerts.</p>
-        </div>
-
-        <div class="arch-card-wrapper reveal">
-          <div class="flow-container">
-            <div class="flow-step-node"><span class="step-num">◆</span> H₂S Industrial Environment</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Wearable Passive Sensor / Dosimeter</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Colorimetric Reaction & Optical Response</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Digital Data Acquisition Unit</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Microcontroller Interface (BLE/WiFi)</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Cloud / Local Safety Database</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node highlight-node"><span class="step-num">◆</span> AI Risk & Dose Estimation Model
-            </div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node"><span class="step-num">◆</span> Web Dashboard & Mobile App</div>
-            <div class="flow-line-connector"></div>
-            <div class="flow-step-node highlight-node"><span class="step-num">◆</span> Real-Time Alerts & Exposure Log
-            </div>
           </div>
         </div>
       </div>

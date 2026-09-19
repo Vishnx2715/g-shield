@@ -463,8 +463,122 @@ nav.main-nav {
   border: 1px solid #DBEAFE;
 }
 
+/* ============ HAMBURGER BUTTON ============ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-main);
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hamburger:hover {
+  border-color: var(--blue-bright);
+  background: var(--blue-soft);
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--navy-900);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav overlay */
 @media (max-width: 960px) {
-  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #FFFFFF;
+    box-shadow: -4px 0 30px rgba(15, 23, 42, 0.12);
+    padding: 80px 28px 40px;
+    gap: 4px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy-700);
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--blue-bright);
+    background: var(--blue-soft);
+    border-color: #DBEAFE;
+  }
+
+  .nav-links a::after { display: none; }
+
+  /* Overlay backdrop */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    z-index: 998;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-overlay.open {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Hide "View Dashboard" btn on mobile to save space, keep hamburger visible */
+  .nav-right .btn {
+    display: none;
+  }
+
+  .nav-id-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
 }
 
 /* ============ HERO SECTION ============ */
