@@ -1733,6 +1733,226 @@ table.data-table tr:last-child td {
 }
 
 /* ==========================================================================
+   RESEARCH & DEVELOPMENT (R&D) & DEVELOPMENT JOURNEY SECTIONS
+   ========================================================================== */
+
+.rd-grid-3,
+.journey-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1040px) {
+  .rd-grid-3,
+  .journey-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .rd-grid-3,
+  .journey-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rd-card,
+.journey-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.rd-card:hover,
+.journey-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--blue-bright);
+  box-shadow: var(--shadow-lg), 0 0 25px rgba(37, 99, 235, 0.08);
+}
+
+.rd-card::before,
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy-900), var(--blue-bright));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.rd-card:hover::before,
+.journey-card:hover::before {
+  opacity: 1;
+}
+
+/* Image container with hover zoom */
+.photo-card-media {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: var(--navy-900);
+}
+
+.photo-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.rd-card:hover .photo-card-media img,
+.journey-card:hover .photo-card-media img {
+  transform: scale(1.06);
+}
+
+/* Photo overlay badges */
+.photo-overlay-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.04em;
+  z-index: 1;
+}
+
+.photo-location-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  color: #E2E8F0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 1;
+}
+
+.photo-location-tag svg {
+  width: 12px;
+  height: 12px;
+  color: #38BDF8;
+}
+
+/* Card Content Body */
+.photo-card-body {
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.photo-card-phase {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.photo-card-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.photo-card-lead {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  line-height: 1.55;
+}
+
+/* Feature bullets inside cards */
+.photo-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo-card-bullets li {
+  font-size: 13px;
+  color: var(--navy-700);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.photo-bullet-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2.5px;
+  color: var(--blue-bright);
+}
+
+.photo-card-bullets strong {
+  color: var(--navy-900);
+  font-weight: 600;
+}
+
+/* Footer tags of card */
+.photo-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mini-spec-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy-600);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}
+
+
+/* ==========================================================================
    TEAM MEMBERS & MENTORS SECTIONS (3D CARDS & ENHANCED PLACEHOLDERS)
    ========================================================================== */
 
